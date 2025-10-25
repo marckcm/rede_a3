@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Adicionar Dispositivo</h1>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<!-- ✅ CORRETO: method="POST" -->
+<form method="POST">
+    <label for="device_name">Nome do Dispositivo:</label>
+    <input type="text" name="device_name" required>
+    
+    <label for="device_type">Tipo do Dispositivo:</label>
+    <input type="text" name="device_type" required>
+    
+    <label for="ip_address">Endereço IP:</label>
+    <input type="text" name="ip_address" required>
+    
+    <label for="vlan">VLAN:</label>
+    <input type="text" name="vlan">
+    
+    <label for="configuration">Configuração:</label>
+    <textarea name="configuration"></textarea>
+    
+    <label for="notes">Observações:</label>
+    <textarea name="notes"></textarea>
+    
+    <button type="submit" class="btn-primary">Adicionar</button>
+</form>
+
+<a href="{{ url_for('index') }}">Voltar</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Dispositivos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Gerenciamento de Dispositivos</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Listar Dispositivos</a></li>
+            <li><a href="{{ url_for('add_device') }}">Adicionar Dispositivo</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <footer>
+        &copy; 2024 Gerenciamento de Dispositivos
+    </footer>
+</body>
+</html>
