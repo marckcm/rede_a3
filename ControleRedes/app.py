@@ -12,7 +12,7 @@ def get_db_connection():
             host="localhost",
             user="root",
             password="",
-            port=7306,
+            port=3306,
             database="rack_management"
         )
         return connection
